@@ -11,8 +11,7 @@ matrix:
       env: BUILD_ENV=production
 
 cache:
-  directories:
-    - ~/.npm
+  yarn: true
 
 before_script:
   - NODE_ENV=$BUILD_ENV npm run build

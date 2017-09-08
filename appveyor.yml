@@ -15,7 +15,7 @@ environment:
 
 install:
   - ps: Install-Product node $env:nodejs_version
-  - appveyor-retry npm install
+  - appveyor-retry yarn install
   - npm run build
   - npm install mocha-appveyor-reporter
   - echo --reporter mocha-appveyor-reporter >> test/mocha.opts
@@ -27,7 +27,7 @@ test_script:
 
 # cache npm modules
 cache:
-  - '%AppData%\npm-cache -> package.json'
+  - "%LOCALAPPDATA%\\Yarn"
 
 # Don't actually build
 build: off
